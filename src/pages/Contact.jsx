@@ -34,8 +34,8 @@ const Contact = () => {
           Contact Us
         </h1>
         <p className="text-center text-gray-600 mb-12 text-lg">
-          {/* TODO: Replace with actual contact page description */}
-          Get in touch with us. We'd love to hear from you!
+          Contact UNIMAK for machinery solutions and turn-key plant services.
+          We're here to help with your industrial machinery needs.
         </p>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -59,7 +59,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition"
                   placeholder="Your Name"
                 />
               </div>
@@ -78,7 +78,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition"
                   placeholder="your.email@example.com"
                 />
               </div>
@@ -97,14 +97,14 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows="6"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition resize-none"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition resize-none"
                   placeholder="Your message here..."
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-blue-600 text-white py-3 px-6 rounded-md font-semibold hover:bg-blue-700 transition-colors duration-200"
+                className="w-full bg-orange-500 text-white py-3 px-6 rounded-md font-semibold hover:bg-orange-600 transition-colors duration-200"
               >
                 Send Message
               </button>
@@ -122,7 +122,7 @@ const Contact = () => {
                 <div className="flex items-start">
                   <div className="flex-shrink-0">
                     <svg
-                      className="h-6 w-6 text-blue-600"
+                      className="h-6 w-6 text-orange-500"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -144,11 +144,10 @@ const Contact = () => {
                   <div className="ml-4">
                     <h3 className="text-sm font-medium text-gray-500">Address</h3>
                     <p className="text-gray-800 mt-1">
-                      {/* TODO: Replace with actual company address */}
-                      123 Business Street<br />
-                      Suite 100<br />
-                      City, State 12345<br />
-                      Country
+                      UNİMAK Makina Sanayi ve Tic. Aş.<br />
+                      Ahmetbey Mahallesi, Nilüfer Cd. No:128<br />
+                      16370 Osmangazi<br />
+                      Bursa / TURKEY
                     </p>
                   </div>
                 </div>
@@ -156,7 +155,7 @@ const Contact = () => {
                 <div className="flex items-start">
                   <div className="flex-shrink-0">
                     <svg
-                      className="h-6 w-6 text-blue-600"
+                      className="h-6 w-6 text-orange-500"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -172,8 +171,10 @@ const Contact = () => {
                   <div className="ml-4">
                     <h3 className="text-sm font-medium text-gray-500">Phone</h3>
                     <p className="text-gray-800 mt-1">
-                      {/* TODO: Replace with actual phone number */}
-                      +1 (555) 123-4567
+                      +90 224 281 22 25
+                    </p>
+                    <p className="text-sm text-gray-600 mt-1">
+                      Fax: +90 224 281 22 30
                     </p>
                   </div>
                 </div>
@@ -181,7 +182,7 @@ const Contact = () => {
                 <div className="flex items-start">
                   <div className="flex-shrink-0">
                     <svg
-                      className="h-6 w-6 text-blue-600"
+                      className="h-6 w-6 text-orange-500"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -197,8 +198,7 @@ const Contact = () => {
                   <div className="ml-4">
                     <h3 className="text-sm font-medium text-gray-500">Email</h3>
                     <p className="text-gray-800 mt-1">
-                      {/* TODO: Replace with actual email address */}
-                      contact@company.com
+                      mail@unimak.com
                     </p>
                   </div>
                 </div>

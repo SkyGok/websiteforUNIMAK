@@ -65,7 +65,7 @@ const Admin = () => {
                   value={homeContent.tagline}
                   onChange={(e) => handleHomeContentChange('tagline', e.target.value)}
                   rows="2"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none"
                   placeholder="Enter hero tagline"
                 />
               </div>
@@ -79,7 +79,7 @@ const Admin = () => {
                   value={homeContent.aboutUs}
                   onChange={(e) => handleHomeContentChange('aboutUs', e.target.value)}
                   rows="4"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none"
                   placeholder="Enter about us content"
                 />
               </div>
@@ -93,7 +93,7 @@ const Admin = () => {
                   value={homeContent.mission}
                   onChange={(e) => handleHomeContentChange('mission', e.target.value)}
                   rows="4"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none"
                   placeholder="Enter mission statement"
                 />
               </div>
@@ -108,7 +108,7 @@ const Admin = () => {
                     <button
                       key={imageName}
                       onClick={() => handleImageUpload(imageName)}
-                      className="border-2 border-dashed border-gray-300 rounded-lg p-4 hover:border-blue-500 transition-colors text-center"
+                      className="border-2 border-dashed border-gray-300 rounded-lg p-4 hover:border-orange-500 transition-colors text-center"
                     >
                       <svg
                         className="h-8 w-8 text-gray-400 mx-auto mb-2"
@@ -130,7 +130,7 @@ const Admin = () => {
                 </div>
               </div>
 
-              <button className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors">
+              <button className="bg-orange-500 text-white px-6 py-2 rounded-md hover:bg-orange-600 transition-colors">
                 Save Home Page Changes
               </button>
             </div>
@@ -151,7 +151,7 @@ const Admin = () => {
                   type="text"
                   value={productData.name}
                   onChange={(e) => handleProductChange('name', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none"
                   placeholder="Enter product name"
                 />
               </div>
@@ -164,7 +164,7 @@ const Admin = () => {
                   value={productData.description}
                   onChange={(e) => handleProductChange('description', e.target.value)}
                   rows="4"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none"
                   placeholder="Enter product description"
                 />
               </div>
@@ -177,7 +177,7 @@ const Admin = () => {
                   type="text"
                   value={productData.price}
                   onChange={(e) => handleProductChange('price', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none"
                   placeholder="Enter price (e.g., $99.99)"
                 />
               </div>
@@ -211,7 +211,7 @@ const Admin = () => {
                 <button className="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition-colors">
                   Add Product
                 </button>
-                <button className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors">
+                <button className="bg-orange-500 text-white px-6 py-2 rounded-md hover:bg-orange-600 transition-colors">
                   Update Product
                 </button>
                 <button className="bg-red-600 text-white px-6 py-2 rounded-md hover:bg-red-700 transition-colors">
@@ -234,7 +234,7 @@ const Admin = () => {
                 </label>
                 <textarea
                   rows="3"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none"
                   placeholder="123 Business Street, Suite 100, City, State 12345"
                 />
               </div>
@@ -245,7 +245,7 @@ const Admin = () => {
                 </label>
                 <input
                   type="text"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none"
                   placeholder="+1 (555) 123-4567"
                 />
               </div>
@@ -256,12 +256,12 @@ const Admin = () => {
                 </label>
                 <input
                   type="email"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none"
                   placeholder="contact@company.com"
                 />
               </div>
 
-              <button className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors">
+              <button className="bg-orange-500 text-white px-6 py-2 rounded-md hover:bg-orange-600 transition-colors">
                 Save Contact Information
               </button>
             </div>
