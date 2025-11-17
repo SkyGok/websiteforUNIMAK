@@ -6,6 +6,6 @@ import react from '@vitejs/plugin-react'
 // For user/organization pages, set base to "/"
 export default defineConfig({
   plugins: [react()],
-  base: process.env.NODE_ENV === 'production' ? '/website/' : '/',
+  base: process.env.NODE_ENV === 'production' ? '/websiteforUNIMAK/' : '/',
 })
 
