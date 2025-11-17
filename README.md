@@ -95,6 +95,52 @@ All placeholder content is marked with `TODO` comments in the code. Replace:
 - TailwindCSS 3
 - Vite
 
+## Deployment to GitHub Pages
+
+This project is configured for automatic deployment to GitHub Pages using GitHub Actions.
+
+### Setup Instructions
+
+1. **Create a GitHub repository** (if you haven't already)
+
+2. **Update the base path** in `vite.config.js`:
+   - If your repository is named `website`, the base path is already set to `/website/`
+   - If your repository has a different name, update line 9 in `vite.config.js`:
+     ```js
+     base: process.env.NODE_ENV === 'production' ? '/your-repo-name/' : '/',
+     ```
+   - For user/organization pages (username.github.io), set base to `'/'`
+
+3. **Enable GitHub Pages**:
+   - Go to your repository on GitHub
+   - Navigate to **Settings** → **Pages**
+   - Under **Source**, select **GitHub Actions**
+
+4. **Push your code**:
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git branch -M main
+   git remote add origin https://github.com/your-username/your-repo-name.git
+   git push -u origin main
+   ```
+
+5. **Automatic Deployment**:
+   - The GitHub Actions workflow will automatically build and deploy your site
+   - After pushing, go to the **Actions** tab to see the deployment progress
+   - Once complete, your site will be available at:
+     `https://your-username.github.io/your-repo-name/`
+
+### Manual Deployment (Alternative)
+
+If you prefer to deploy manually:
+
+```bash
+npm run build
+# Then upload the contents of the 'dist' folder to your GitHub Pages branch
+```
+
 ## Notes
 
 - This is a demo website with no backend integration
@@ -102,4 +148,5 @@ All placeholder content is marked with `TODO` comments in the code. Replace:
 - No authentication is implemented
 - All images are placeholders
 - Replace all TODO comments with actual content before production use
+- The site uses HashRouter for GitHub Pages compatibility (URLs will have `#` in them)
 

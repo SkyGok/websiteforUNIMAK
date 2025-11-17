@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import Products from './pages/Products'
@@ -8,6 +8,7 @@ import Admin from './pages/Admin'
 /**
  * Main App Component
  * Sets up React Router and renders all pages with navigation
+ * Using HashRouter for GitHub Pages compatibility
  */
 function App() {
   return (
