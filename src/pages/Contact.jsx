@@ -1,10 +1,14 @@
 import { useState } from 'react'
+import { useLanguage } from '../context/LanguageContext'
+import { translations } from '../translations/translations'
 
 /**
  * Contact Page Component
  * Includes contact form, company information, and map placeholder
  */
 const Contact = () => {
+  const { language } = useLanguage()
+  const t = translations[language]
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -31,18 +35,17 @@ const Contact = () => {
     <div className="min-h-screen bg-gray-50 py-12 px-4">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-4 text-gray-800">
-          Contact Us
+          {t.contact.title}
         </h1>
         <p className="text-center text-gray-600 mb-12 text-lg">
-          Contact UNIMAK for machinery solutions and turn-key plant services.
-          We're here to help with your industrial machinery needs.
+          {t.contact.description}
         </p>
 
         <div className="grid md:grid-cols-2 gap-8">
           {/* Contact Form */}
           <div className="bg-white rounded-lg shadow-md p-6 md:p-8">
             <h2 className="text-2xl font-semibold mb-6 text-gray-800">
-              Send us a Message
+              {t.contact.sendMessage}
             </h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
@@ -50,7 +53,7 @@ const Contact = () => {
                   htmlFor="name"
                   className="block text-sm font-medium text-gray-700 mb-2"
                 >
-                  Name
+                  {t.contact.name}
                 </label>
                 <input
                   type="text"
@@ -60,7 +63,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition"
-                  placeholder="Your Name"
+                  placeholder={t.contact.yourName}
                 />
               </div>
 
@@ -69,7 +72,7 @@ const Contact = () => {
                   htmlFor="email"
                   className="block text-sm font-medium text-gray-700 mb-2"
                 >
-                  Email
+                  {t.contact.email}
                 </label>
                 <input
                   type="email"
@@ -79,7 +82,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition"
-                  placeholder="your.email@example.com"
+                  placeholder={t.contact.yourEmail}
                 />
               </div>
 
@@ -88,7 +91,7 @@ const Contact = () => {
                   htmlFor="message"
                   className="block text-sm font-medium text-gray-700 mb-2"
                 >
-                  Message
+                  {t.contact.message}
                 </label>
                 <textarea
                   id="message"
@@ -98,7 +101,7 @@ const Contact = () => {
                   required
                   rows="6"
                   className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition resize-none"
-                  placeholder="Your message here..."
+                  placeholder={t.contact.yourMessage}
                 />
               </div>
 
@@ -106,7 +109,7 @@ const Contact = () => {
                 type="submit"
                 className="w-full bg-orange-500 text-white py-3 px-6 rounded-md font-semibold hover:bg-orange-600 transition-colors duration-200"
               >
-                Send Message
+                {t.contact.send}
               </button>
             </form>
           </div>
@@ -116,7 +119,7 @@ const Contact = () => {
             {/* Company Info */}
             <div className="bg-white rounded-lg shadow-md p-6 md:p-8">
               <h2 className="text-2xl font-semibold mb-6 text-gray-800">
-                Get in Touch
+                {t.contact.getInTouch}
               </h2>
               <div className="space-y-4">
                 <div className="flex items-start">
@@ -142,7 +145,7 @@ const Contact = () => {
                     </svg>
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-sm font-medium text-gray-500">Address</h3>
+                    <h3 className="text-sm font-medium text-gray-500">{t.contact.address}</h3>
                     <p className="text-gray-800 mt-1">
                       UNİMAK Makina Sanayi ve Tic. Aş.<br />
                       Ahmetbey Mahallesi, Nilüfer Cd. No:128<br />
@@ -169,12 +172,12 @@ const Contact = () => {
                     </svg>
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-sm font-medium text-gray-500">Phone</h3>
+                    <h3 className="text-sm font-medium text-gray-500">{t.contact.phone}</h3>
                     <p className="text-gray-800 mt-1">
                       +90 224 281 22 25
                     </p>
                     <p className="text-sm text-gray-600 mt-1">
-                      Fax: +90 224 281 22 30
+                      {t.contact.fax}: +90 224 281 22 30
                     </p>
                   </div>
                 </div>
@@ -196,7 +199,7 @@ const Contact = () => {
                     </svg>
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-sm font-medium text-gray-500">Email</h3>
+                    <h3 className="text-sm font-medium text-gray-500">{t.contact.emailLabel}</h3>
                     <p className="text-gray-800 mt-1">
                       mail@unimak.com
                     </p>
@@ -223,9 +226,9 @@ const Contact = () => {
                       d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
                     />
                   </svg>
-                  <p className="text-gray-500 font-medium">Map Placeholder</p>
+                  <p className="text-gray-500 font-medium">{t.contact.mapPlaceholder}</p>
                   <p className="text-gray-400 text-sm mt-1">
-                    Embed your map here (Google Maps, Mapbox, etc.)
+                    {t.contact.mapDesc}
                   </p>
                 </div>
               </div>

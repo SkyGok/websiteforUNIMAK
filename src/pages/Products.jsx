@@ -1,51 +1,57 @@
+import { useLanguage } from '../context/LanguageContext'
+import { translations } from '../translations/translations'
+
 /**
  * Products Page Component
  * Displays a grid of products with image, name, description, and price
  */
 const Products = () => {
+  const { language } = useLanguage()
+  const t = translations[language]
+
   // UNIMAK product categories
   const products = [
     {
       id: 1,
-      name: 'Sanitary Ware Machinery',
+      name: t.home.sanitaryWare,
       description: 'Complete machinery solutions for sanitary ware manufacturing including casting, glazing, and finishing equipment.',
-      price: 'Contact for Quote',
-      image: 'Sanitary Ware Machinery'
+      price: t.products.contactForQuote,
+      image: t.home.sanitaryWare
     },
     {
       id: 2,
-      name: 'Ceramics Machinery',
+      name: t.home.ceramics,
       description: 'Advanced equipment and systems for ceramic production, processing, and finishing operations.',
-      price: 'Contact for Quote',
-      image: 'Ceramics Machinery'
+      price: t.products.contactForQuote,
+      image: t.home.ceramics
     },
     {
       id: 3,
-      name: 'Filtration Systems',
+      name: t.home.filtration,
       description: 'Industrial filtration solutions designed for various manufacturing and processing applications.',
-      price: 'Contact for Quote',
-      image: 'Filtration Systems'
+      price: t.products.contactForQuote,
+      image: t.home.filtration
     },
     {
       id: 4,
-      name: 'Material Handling Solutions',
+      name: t.home.materialHandling,
       description: 'Efficient material handling systems and equipment for industrial manufacturing operations.',
-      price: 'Contact for Quote',
-      image: 'Material Handling'
+      price: t.products.contactForQuote,
+      image: t.home.materialHandling
     },
     {
       id: 5,
-      name: 'Natural Stone Splitting',
+      name: t.home.naturalStone,
       description: 'Specialized machinery for natural stone processing, splitting, and finishing operations.',
-      price: 'Contact for Quote',
-      image: 'Natural Stone Machinery'
+      price: t.products.contactForQuote,
+      image: t.home.naturalStone
     },
     {
       id: 6,
-      name: 'Turn-Key Plants',
+      name: t.home.turnKeyPlants,
       description: 'Complete turn-key plant solutions from design and engineering to manufacturing and installation.',
-      price: 'Contact for Quote',
-      image: 'Turn-Key Plants'
+      price: t.products.contactForQuote,
+      image: t.home.turnKeyPlants
     },
   ]
 
@@ -53,11 +59,10 @@ const Products = () => {
     <div className="min-h-screen bg-gray-50 py-12 px-4">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-4 text-gray-800">
-          Our Products
+          {t.products.title}
         </h1>
         <p className="text-center text-gray-600 mb-12 text-lg">
-          Explore our comprehensive range of machinery and turn-key plant solutions
-          for the sanitary ware, ceramics, and stone processing industries.
+          {t.products.description}
         </p>
 
         {/* Products Grid */}
@@ -88,7 +93,7 @@ const Products = () => {
                     {product.price}
                   </span>
                   <button className="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600 transition-colors duration-200 text-sm">
-                    Contact Us
+                    {t.products.contactUs}
                   </button>
                 </div>
               </div>

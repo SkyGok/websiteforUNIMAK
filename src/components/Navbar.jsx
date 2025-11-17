@@ -1,12 +1,16 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useLanguage } from '../context/LanguageContext'
+import { translations } from '../translations/translations'
 
 /**
  * Responsive Navigation Bar Component
- * Includes hamburger menu for mobile devices
+ * Includes hamburger menu for mobile devices and language switcher
  */
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { language, toggleLanguage } = useLanguage()
+  const t = translations[language]
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -23,38 +27,57 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+          {/* Desktop Navigation and Language Switcher */}
+          <div className="hidden md:flex items-center space-x-4">
+            <div className="flex items-baseline space-x-4">
               <Link
                 to="/"
                 className="text-gray-700 hover:text-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors"
               >
-                Home
+                {t.nav.home}
               </Link>
               <Link
                 to="/products"
                 className="text-gray-700 hover:text-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors"
               >
-                Products
+                {t.nav.products}
               </Link>
               <Link
                 to="/contact"
                 className="text-gray-700 hover:text-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors"
               >
-                Contact
+                {t.nav.contact}
               </Link>
               <Link
                 to="/admin"
                 className="text-gray-700 hover:text-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors"
               >
-                Admin
+                {t.nav.admin}
               </Link>
             </div>
+            
+            {/* Language Switcher */}
+            <button
+              onClick={toggleLanguage}
+              className="ml-4 px-3 py-1.5 rounded-md text-sm font-medium text-gray-700 hover:text-orange-500 hover:bg-gray-100 transition-colors border border-gray-300 flex items-center space-x-2"
+              aria-label="Toggle language"
+            >
+              <span className="text-base">{language === 'en' ? '🇬🇧' : '🇹🇷'}</span>
+              <span className="uppercase font-semibold">{language === 'en' ? 'EN' : 'TR'}</span>
+            </button>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          {/* Mobile menu button and language switcher */}
+          <div className="md:hidden flex items-center space-x-2">
+            {/* Language Switcher for Mobile */}
+            <button
+              onClick={toggleLanguage}
+              className="px-2 py-1.5 rounded-md text-sm font-medium text-gray-700 hover:text-orange-500 hover:bg-gray-100 transition-colors border border-gray-300 flex items-center space-x-1"
+              aria-label="Toggle language"
+            >
+              <span className="text-base">{language === 'en' ? '🇬🇧' : '🇹🇷'}</span>
+              <span className="uppercase font-semibold text-xs">{language === 'en' ? 'EN' : 'TR'}</span>
+            </button>
             <button
               onClick={toggleMenu}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-orange-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500"
@@ -108,28 +131,28 @@ const Navbar = () => {
               className="text-gray-700 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
-              Home
+              {t.nav.home}
             </Link>
             <Link
               to="/products"
               className="text-gray-700 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
-              Products
+              {t.nav.products}
             </Link>
             <Link
               to="/contact"
               className="text-gray-700 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
-              Contact
+              {t.nav.contact}
             </Link>
             <Link
               to="/admin"
               className="text-gray-700 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
-              Admin
+              {t.nav.admin}
             </Link>
           </div>
         </div>
