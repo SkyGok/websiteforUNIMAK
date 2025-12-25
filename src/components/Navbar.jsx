@@ -48,12 +48,6 @@ const Navbar = () => {
               >
                 {t.nav.contact}
               </Link>
-              <Link
-                to="/admin"
-                className="text-gray-700 hover:text-orange-500 px-3 py-2 rounded-md text-sm font-medium transition-colors"
-              >
-                {t.nav.admin}
-              </Link>
             </div>
             
             {/* Language Switcher */}
@@ -146,13 +140,6 @@ const Navbar = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               {t.nav.contact}
-            </Link>
-            <Link
-              to="/admin"
-              className="text-gray-700 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {t.nav.admin}
             </Link>
           </div>
         </div>

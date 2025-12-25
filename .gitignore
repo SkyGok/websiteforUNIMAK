@@ -12,6 +12,11 @@ dist
 dist-ssr
 *.local
 
+# Environment variables
+.env
+.env.local
+.env.production
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -23,3 +28,9 @@ dist-ssr
 *.sln
 *.sw?
 
+# Uploads
+server/uploads/*
+!server/uploads/.gitkeep
+
+# Docker
+docker-compose.override.yml
